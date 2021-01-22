@@ -1,12 +1,29 @@
+<form [formGroup]="form">
+  <div class="form-group">
+    <label >First Name</label>
+    <input formControlName="FirstName" type="text">
+  </div>
+
+
+  <div class="form-group">
+    <label >Last Name</label>
+    <input formControlName="LastName" type="text">
+  </div>
+
+  <button [disabled]="!form.valid" (click)="submit()">Submit</button>
+</form>
+
+
+<h1>Students</h1>
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-  <ng-container matColumnDef="FirstName">
+  <ng-container matColumnDef="firstName">
     <th mat-header-cell *matHeaderCellDef> First Name </th>
     <td mat-cell *matCellDef="let element"> {{element.FirstName}} </td>
   </ng-container>
 
-  <ng-container matColumnDef="LastName">
+  <ng-container matColumnDef="lastName">
     <th mat-header-cell *matHeaderCellDef> Last Name </th>
     <td mat-cell *matCellDef="let element"> {{element.LastName}} </td>
   </ng-container>
