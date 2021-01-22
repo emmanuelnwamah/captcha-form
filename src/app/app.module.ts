@@ -8,6 +8,7 @@ import {MatTableModule} from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 
 
 @NgModule({
@@ -21,7 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatTableModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RecaptchaModule,
+    RecaptchaFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

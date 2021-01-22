@@ -28,11 +28,14 @@ export class AppComponent implements AfterViewInit{
 
   form = new FormGroup({
     FirstName: new FormControl('', Validators.required),
-    LastName: new FormControl('', Validators.required)
+    LastName: new FormControl('', Validators.required),
+    Captcha: new FormControl(null, Validators.required)
   });
 
   submit() {
-    this._httpClient.post<Student>(this.url, this.form.value).subscribe(response => {
+    var Student  = <Student>this.form.value;
+    this.form.reset();
+    this._httpClient.post<Student>(this.url, Student).subscribe(response => {
       this.loadData()
     });
   }
@@ -42,5 +45,4 @@ export class AppComponent implements AfterViewInit{
       this.dataSource = response;
     });
   }
-
 }
